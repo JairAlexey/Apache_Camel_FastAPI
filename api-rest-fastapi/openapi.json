@@ -1,0 +1,164 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "API REST EcoLogistics – Envíos (FastAPI)",
+    "version": "1.0.0",
+    "description": "API para gestión de envíos de EcoLogistics S.A. Carga envios.json, permite consultas y creación, y persiste cambios."
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health check",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "status"
+                  ]
+                },
+                "example": {
+                  "status": "ok"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/envios": {
+      "get": {
+        "summary": "Lista todos los envíos",
+        "operationId": "listar_envios_envios_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Envio"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Crea un nuevo envío",
+        "operationId": "crear_envio_envios_post",
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envio"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "ID ya existe"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Envio"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/envios/{envio_id}": {
+      "get": {
+        "summary": "Obtiene un envío por ID",
+        "operationId": "obtener_envio_envios__envio_id__get",
+        "parameters": [
+          {
+            "name": "envio_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envio"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Envío no encontrado"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Envio": {
+        "title": "Envio",
+        "type": "object",
+        "properties": {
+          "id_envio": {
+            "type": "string",
+            "title": "Id Envio",
+            "description": "Identificador único del envío"
+          },
+          "cliente": {
+            "type": "string",
+            "title": "Cliente",
+            "description": "Nombre del cliente"
+          },
+          "direccion": {
+            "type": "string",
+            "title": "Direccion",
+            "description": "Dirección de entrega"
+          },
+          "estado": {
+            "type": "string",
+            "title": "Estado",
+            "description": "Estado actual del envío"
+          }
+        },
+        "required": [
+          "id_envio",
+          "cliente",
+          "direccion",
+          "estado"
+        ],
+        "examples": [
+          {
+            "id_envio": "001",
+            "cliente": "Juan Pérez",
+            "direccion": "Calle 12 #45",
+            "estado": "En tránsito"
+          }
+        ]
+      }
+    }
+  }
+}

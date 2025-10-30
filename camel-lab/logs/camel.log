@@ -1,0 +1,27 @@
+[2025-10-29 15:53:12] INFO  org.apache.camel.main.MainSupport - Apache Camel (Main) 4.14.1 is starting
+[2025-10-29 15:53:13] INFO  org.apache.camel.component.file.FileEndpoint - Using default memory based idempotent repository with cache max size: 1000
+[2025-10-29 15:53:13] INFO  org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 4.14.1 (camel-1) is starting
+[2025-10-29 15:53:13] INFO  org.apache.camel.impl.engine.AbstractCamelContext - Routes startup (total:1)
+[2025-10-29 15:53:13] INFO  org.apache.camel.impl.engine.AbstractCamelContext -     Started route1 (file://../input)
+[2025-10-29 15:53:13] INFO  org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 4.14.1 (camel-1) started in 10ms (build:0ms init:0ms start:10ms boot:372ms)
+[2025-10-29 15:53:14] INFO  route1 - [2025-10-29 15:53:14] Procesando archivo: ventas.csv
+[2025-10-29 19:39:27] INFO  org.apache.camel.main.MainSupport - Apache Camel (Main) 4.14.1 is starting
+[2025-10-29 19:39:27] INFO  org.apache.camel.component.file.FileEndpoint - Using default memory based idempotent repository with cache max size: 1000
+[2025-10-29 19:39:27] INFO  org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 4.14.1 (camel-1) is starting
+[2025-10-29 19:39:27] INFO  org.apache.camel.impl.engine.AbstractCamelContext - Routes startup (total:1)
+[2025-10-29 19:39:27] INFO  org.apache.camel.impl.engine.AbstractCamelContext -     Started csv-to-json-envios (file://../input)
+[2025-10-29 19:39:27] INFO  org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 4.14.1 (camel-1) started in 68ms (build:0ms init:0ms start:68ms boot:346ms)
+[2025-10-29 19:39:28] INFO  csv-to-json-envios - [INFO] Procesando archivo: envios.csv
+[2025-10-29 19:39:28] INFO  com.example.FileTransferRoute - [INFO] Archivo cargado con 3 registros.
+[2025-10-29 19:39:28] INFO  com.example.FileTransferRoute - [INFO] Datos transformados a formato JSON.
+[2025-10-29 19:39:28] INFO  csv-to-json-envios - [INFO] JSON generado en output/envios.json
+[2025-10-29 20:03:12] INFO  org.apache.camel.main.MainSupport - Apache Camel (Main) 4.14.1 is starting
+[2025-10-29 20:03:12] INFO  org.apache.camel.component.file.FileEndpoint - Using default memory based idempotent repository with cache max size: 1000
+[2025-10-29 20:03:12] INFO  org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 4.14.1 (camel-1) is starting
+[2025-10-29 20:03:12] INFO  org.apache.camel.impl.engine.AbstractCamelContext - Routes startup (total:1)
+[2025-10-29 20:03:12] INFO  org.apache.camel.impl.engine.AbstractCamelContext -     Started csv-to-json-envios (file://../input)
+[2025-10-29 20:03:12] INFO  org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 4.14.1 (camel-1) started in 52ms (build:0ms init:0ms start:52ms boot:295ms)
+[2025-10-29 20:03:13] INFO  csv-to-json-envios - [INFO] Procesando archivo: envios.csv
+[2025-10-29 20:03:13] INFO  com.example.FileTransferRoute - [INFO] Archivo cargado con 3 registros.
+[2025-10-29 20:03:13] INFO  com.example.FileTransferRoute - [INFO] Datos transformados a formato JSON.
+[2025-10-29 20:03:13] INFO  csv-to-json-envios - [INFO] JSON generado en output/envios.json

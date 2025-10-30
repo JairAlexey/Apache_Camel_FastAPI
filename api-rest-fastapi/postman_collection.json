@@ -1,0 +1,96 @@
+{
+  "info": {
+    "name": "API REST EcoLogistics – Envíos (FastAPI)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "6a2a0c50-2a0a-4e8c-8f6b-1234567890ab",
+    "version": "1.0.0"
+  },
+  "item": [
+    {
+      "name": "GET /health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET /envios",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/envios",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "envios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET /envios/{id}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/envios/001",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "envios",
+            "001"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST /envios",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_envio\": \"004\",\n  \"cliente\": \"Ana Ruiz\",\n  \"direccion\": \"Calle 1 #2\",\n  \"estado\": \"Pendiente\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/envios",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "envios"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
